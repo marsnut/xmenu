@@ -13,4 +13,4 @@ let g:xmenu_config = [
 
 let g:xmenu_category = 'java'
 
-nnoremap <silent> X :call <SID>cmdMenu()<cr>
+" nnoremap <silent> X :call <SID>cmdMenu()<cr>
