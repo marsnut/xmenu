@@ -1,7 +1,7 @@
 func! xmenu#popup()
-    let menus = g:xmenu_config[g:xmenu_topic]
-    let names = []
-    let cmds = []
+    let data = join(readfile(expand(g:xmenu_config_file)))
+    let config = json_decode(data)
+    menus = config[g:xmenu_topic]
     for menu in menus
         call add(names, menu.name)
         call add(cmds, menu.cmd)
