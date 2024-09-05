@@ -1,3 +1,20 @@
+func! xmenu#setTopic()
+    let data = join(readfile(expand(g:xmenu_config_file)))
+    let config = json_decode(data)
+    let topics = keys(config)
+
+    func! s:selectedTopic(id, cmd) closure
+        if a:cmd == -1  " menu was canceled
+            return
+        endif
+        let g:xmenu_topic = topcis[a:cmd-1]
+    endfunc
+
+    call popup_menu(topics, #{
+            \ callback: function('s:selectedTopic'),
+            \ })
+endfunc
+
 func! xmenu#popup()
     let data = join(readfile(expand(g:xmenu_config_file)))
     let config = json_decode(data)
