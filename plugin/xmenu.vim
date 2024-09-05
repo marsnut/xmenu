@@ -1,19 +1,19 @@
 let g:xmenu_config = {
             \ "java": [
-            \       #{  title: "AsyncRun",              cmd: "AsyncRun source cmd.sh" },
-            \       #{  title: "AsyncRun - boot-run",   cmd: "AsyncRun ./mvnw spring-boot:run" },
-            \       #{  title: "AsyncRun- clean",       cmd: "AsyncRun ./mvnw clean" },
-            \       #{  title: "AsyncRun- compile",     cmd: "AsyncRun ./mvnw compile" },
-            \       #{  title: "AsyncStop",             cmd: "AsyncStop" },
-            \       #{  title: "TODO",                  cmd: "grep TODO"}
+            \       #{  name: "AsyncRun",              cmd: "AsyncRun source cmd.sh" },
+            \       #{  name: "AsyncRun - boot-run",   cmd: "AsyncRun ./mvnw spring-boot:run" },
+            \       #{  name: "AsyncRun- clean",       cmd: "AsyncRun ./mvnw clean" },
+            \       #{  name: "AsyncRun- compile",     cmd: "AsyncRun ./mvnw compile" },
+            \       #{  name: "AsyncStop",             cmd: "AsyncStop" },
+            \       #{  name: "TODO",                  cmd: "grep TODO"}
             \     ],
             \ "python": [
-            \       #{  title: "version",      cmd: "echom 'vim-version' version" },
-            \       #{  title: "line-count",   cmd: "call s:lines_count()" },
-            \       #{  title: "TODO",         cmd: "grep TODO" }
+            \       #{  name: "version",      cmd: "echom 'vim-version' version" },
+            \       #{  name: "line-count",   cmd: "call s:lines_count()" },
+            \       #{  name: "TODO",         cmd: "grep TODO" }
             \     ]
             \ }
 
-let g:xmenu_category = 'java'
+let g:xmenu_topic = 'java'
 
 " nnoremap <silent> X :call <SID>cmdMenu()<cr>
