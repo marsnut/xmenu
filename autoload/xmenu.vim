@@ -1,5 +1,5 @@
 func! xmenu#popup()
-    let menus = g:xmwnu_config[g:xmenu_cat]
+    let menus = g:xmwnu_config[g:xmenu_topic]
     let names = []
     let cmds = []
     for menu in menus
