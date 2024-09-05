@@ -7,7 +7,7 @@ func! xmenu#setTopic()
         if a:cmd == -1  " menu was canceled
             return
         endif
-        let g:xmenu_topic = topcis[a:cmd-1]
+        let g:xmenu_topic = topics[a:cmd-1]
     endfunc
 
     call popup_menu(topics, #{
