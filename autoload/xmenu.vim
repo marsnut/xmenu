@@ -26,4 +26,4 @@ func! s:cmdMenu()
             \ })
 endfunc
 
-nnoremap <buffer> <silent> X :call <SID>cmdMenu()<cr>
+" nnoremap <buffer> <silent> X :call <SID>cmdMenu()<cr>
