@@ -15,6 +15,7 @@ func! xmenu#setTopic()
             \ })
 endfunc
 
+
 func! xmenu#popup()
     let data = join(readfile(expand(g:xmenu_config_file)))
     let config = json_decode(data)
