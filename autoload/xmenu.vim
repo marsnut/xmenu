@@ -1,5 +1,5 @@
 func! s:checkSetting()
-    if !exists(g:xmenu_topic) || !exists(g:xmenu_config_file)
+    if !exists("g:xmenu_topic") || !exists("g:xmenu_config_file")
         echom "topic or config no setting"
         return 0
     endif
