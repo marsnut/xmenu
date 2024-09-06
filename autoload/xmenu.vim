@@ -1,4 +1,21 @@
+func! s:checkSetting()
+    if !exists(g:xmenu_topic) || !exists(g:xmenu_config_file)
+        echom "topic or config no setting"
+        return 0
+    endif
+
+    if !filereadable(expand(g:xmenu_config_file))
+        echom "config file unreadable"
+        return 0
+    endif
+    return 1
+endfunc
+
 func! xmenu#setTopic()
+    if !s:checkSetting()
+        return
+    endif
+
     let data = join(readfile(expand(g:xmenu_config_file)))
     let config = json_decode(data)
     let topics = keys(config)
@@ -16,6 +33,10 @@ func! xmenu#setTopic()
 endfunc
 
 func! xmenu#popup()
+    if !s:checkSetting()
+        return
+    endif
+
     let data = join(readfile(expand(g:xmenu_config_file)))
     let config = json_decode(data)
     let menus = config[g:xmenu_topic]
